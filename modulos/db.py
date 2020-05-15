@@ -1,8 +1,5 @@
 import mysql.connector
-from dbconf import conf, queries
-from usuarios import Usuario, crear_usuario_nuevo
-from productos import Producto
-from compras import Compra
+from modulos.dbconf import *
 
 class Ecommerce:
     def __init__(self, conf):
@@ -11,6 +8,16 @@ class Ecommerce:
 
     def listar_usuarios(self):
         self.cursor.execute(queries["listar_usuarios"])
+        resultados = self.cursor.fetchall()
+        return resultados
+
+    def listar_productos(self):
+        self.cursor.execute(queries["listar_productos"])
+        resultados = self.cursor.fetchall()
+        return resultados
+
+    def listar_compras(self):
+        self.cursor.execute(queries["listar_compras"])
         resultados = self.cursor.fetchall()
         return resultados
 
@@ -55,4 +62,9 @@ class Ecommerce:
     def eliminar_compra(self, usuario):
         val = (compra.get_id(),)
         self.cursor.execute(queries["eliminar_compra"], val)
+        self.conexion.commit()
+
+    def actualizar_clave(self, usuario):
+        val = (usuario.get_clave(), usuario.get_usuario_id())
+        self.cursor.execute(queries["actualizar_usuario_clave"], val)
         self.conexion.commit()

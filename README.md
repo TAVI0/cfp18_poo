@@ -1,20 +1,22 @@
-[ ] Base de datos: hay q encriptar las claves
+[] Base de datos:
+[x] Encriptar claves
+[ ] Agregar carrito de compras
+[ ] Volver a hacer ecommerce_final.sql
 
 [ ] ABM:
-* usuarios -> hacerle update claves
+* usuarios
 * direcciones
 * productos
 * categorias
 * marcas
 * compras
+* carrito de compras
 
-[x] Login y Registro
+[x] Login
+[x] Registro
+[ ] email_validation
 
 Hay q estructurar el programa:
-[ ] Guardar archivos de clases en una carpeta común
-[ ] Crear otro con funciones ABM
-    [ ] Usuarios
-    [ ] Productos
-    [ ] Compras
-    [ ] Carrito de compras
+[x] Guardar modulos en una carpeta común
+[ ] Modularizar funciones del programa principal
 [ ] Programa principal en carpeta principal (main.py)
